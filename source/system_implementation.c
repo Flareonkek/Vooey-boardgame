@@ -139,6 +139,8 @@ int disp_w = idea_w/2;
 int disp_h = idea_h/2;
 float disp_scaling = 0.5;
 
+char darkmode = 0;
+
 // RAYLIB is used to create a window, display things in the window, and play sounds, but only via the functions after this point in this very file
 // (so that the source code could be rewritten to use a different library by changes only to this file)
 #include "raylib.h"
@@ -195,7 +197,10 @@ void si_renderframe(void)
 	
 	ClearBackground(BLACK); // Fill the window black
 	
-	DrawRectangle(disp_x, disp_y, disp_w, disp_h, WHITE); // Fill the display area white
+	if (darkmode)
+		DrawRectangle(disp_x, disp_y, disp_w, disp_h, GRAY); // Fill the display area white
+	else
+		DrawRectangle(disp_x, disp_y, disp_w, disp_h, WHITE); // Fill the display area gray
 	
 	for (int i = 0; i < renderends_index; i++) {
 		struct render_instruction this = renderends[i];

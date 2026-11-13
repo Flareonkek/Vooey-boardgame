@@ -34,15 +34,16 @@ void add_flag_renderend(int flag_index, int arg_geo, int dest_x, int dest_y, int
 // ###                                                                                                                       ###
 // #############################################################################################################################
 
-const int main_menu_items_len = 5;
+const int main_menu_items_len = 6;
 int main_menu_cursor_item = 0; // Starts hovering by PLAY-SINGLEPLAYER
 
 const int main_menu_str_len = 17;
-char* main_menu_item_texts[5] = {
+char* main_menu_item_texts[6] = {
 	"Play singleplayer",
 	"Play multiplayer ",
 	"Name:            ",
 	"Flag:            ",
+	"Light/Dark mode  ",
 	"Quit             ",
 };
 
@@ -171,6 +172,9 @@ void main_menu_frame(void)
 				main_menu_in_setting = true;
 			
 			if (main_menu_cursor_item == 4)
+				darkmode = !darkmode;
+			
+			if (main_menu_cursor_item == 5)
 				si_window_close_order = true;
 		}
 	}
