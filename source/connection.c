@@ -20,10 +20,10 @@
     #include <arpa/inet.h>
     #define INVALID_SOCKET -1
     #define SOCKET_ERROR -1
+	#include <fcntl.h>
 #endif
 
 #include <string.h>
-#include <fcntl.h>
 
 /* Try to connect to server using data entered in connection menu:
 

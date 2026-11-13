@@ -8,7 +8,6 @@
 #define MULTIPLAYER_GAME_STATE 5
 
 int state = MAIN_MENU_STATE;
-//int state = SINGLEPLAYER_GAME_STATE;
 
 unsigned int frame_number = 0;
 
@@ -34,18 +33,30 @@ int main(void)
     printf("game_init()...\n");
 	game_init();
 	
-	// [JUST FOR CONVENIENCE] this puts in default values so I don't have to type them every time I test:
-	conn_sstr[0] = 'a';
-	conn_sstr[1] = 'p';
+	// [JUST FOR CONVENIENCE] this puts in a convenient server string for quick testing:
+	/*
+	conn_sstr[0] = 'l';
+	conn_sstr[1] = 'o';
 	conn_sstr[2] = 'c';
-	conn_sstr_len = 3;
+	conn_sstr[3] = 'a';
+	conn_sstr[4] = 'l';
+	conn_sstr[5] = 'h';
+	conn_sstr[6] = 'o';
+	conn_sstr[7] = 's';
+	conn_sstr[8] = 't';
+	conn_sstr_len = 9;
+	conn_sstr_cursor = 9;
+	*/
+	// [/JUST FOR CONVENIENCE]
+	
+	// Put in the default Port # string
 	conn_pstr[0] = '4';
 	conn_pstr[1] = '7';
 	conn_pstr[2] = '3';
 	conn_pstr[3] = '2';
 	conn_pstr[4] = '1';
 	conn_pstr_len = 5;
-	// [/JUST FOR CONVENIENCE]
+	conn_pstr_cursor = 5;
 	
     
 	printf("main loop begins...\n");
