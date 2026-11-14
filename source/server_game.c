@@ -299,7 +299,8 @@ void server_user_disconnected(int fd)
 			if (state == STATE_GAME && turn_playerind == i)
 			{
 				redo_turn_flag = 1;
-				turn_playerind--;
+				if (turn_playerind == n_players)
+					turn_playerind--;
 			}
 			
 			// Remove the quitter from the player-array
